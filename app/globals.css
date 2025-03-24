@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 95%;
+    --foreground: 222.2 84% 4.9%;
+
+    --primary: 330 100% 76%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 55 100% 60%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    background-image: url("/cloud-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .neon-text {
+    @apply font-bold text-primary;
+    text-shadow: 0 0 5px theme("colors.primary.DEFAULT"), 0 0 10px theme("colors.primary.DEFAULT"), 0 0 15px
+      theme("colors.primary.DEFAULT"), 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  .script-text {
+    @apply font-great-vibes text-white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  }
+
+  .polaroid {
+    @apply bg-white p-2 shadow-lg rotate-0 transition-all duration-300;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .polaroid:hover {
+    @apply -rotate-2 scale-105;
+  }
+
+  .holographic {
+    @apply absolute z-10;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+  }
+
+  .holographic-wave {
+    background: linear-gradient(45deg, rgba(173, 216, 230, 0.7), rgba(218, 165, 32, 0.5), rgba(135, 206, 235, 0.7));
+    background-size: 200% 200%;
+    animation: shimmer 8s linear infinite;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 10px rgba(218, 165, 32, 0.3));
+  }
+}
+
