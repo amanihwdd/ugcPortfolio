@@ -137,8 +137,6 @@ export function ClientFeedback() {
             {/* First testimonial */}
             <div className="relative">
               {/* Curved client name */}
-              <div ref={heleneTextRef} className="text-[#6e89c8] absolute top-10 right-0 w-full h-20"></div>
-
               {/* Polaroid and testimonial */}
               <div className="flex items-start space-x-4">
                 <div className="polaroid w-1/3">
@@ -164,8 +162,6 @@ export function ClientFeedback() {
             {/* Second testimonial */}
             <div className="relative ml-auto">
               {/* Curved client name */}
-              <div ref={heleneTextRef} className="text-[#6e89c8] absolute top-10 right-0 w-full h-20"></div>
-
               {/* Polaroid and testimonial */}
               <div className="flex items-start space-x-4">
                 <div className="polaroid w-1/3">
