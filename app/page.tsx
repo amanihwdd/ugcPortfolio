@@ -3,6 +3,8 @@ import { Navigation } from "@/components/navigation"
 import  {ClientFeedback} from "@/components/client-feedback"
 import { ServicesSection } from "@/components/services-section"
 import { ContactSection } from "@/components/contact-section"
+import Link from "next/link";
+
 export default function Home() {
   
   return (
@@ -42,7 +44,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center justify-around z-20">
           <div className="md:w-1/2 space-y-6 ml-0 md:ml-7 mb-8 md:mb-0 text-center md:text-left">
             <div className="space-y-4 mb-8">
-              <p className="text-white max-w-md">
+              <p className="text-[#6e89c8] max-w-md">
                 I enjoy crafting content that ignites inspiration within my audience.
               </p>
             </div>
@@ -50,7 +52,7 @@ export default function Home() {
             <div className="space-y-2">
               <h1 className="text-6xl sm:text-7xl md:text-9xl neon-text tracking-tight leading-none">UGC</h1>
               <h1 className="text-6xl sm:text-7xl md:text-9xl neon-text tracking-tight leading-none">CREATOR</h1>
-              <h2 className="text-4xl sm:text-5xl md:text-7xl script-text -mt-4">portfolio</h2>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl script-text text-[#6e89c8] -mt-4">portfolio</h2>
             </div>
           </div>
 
@@ -101,32 +103,36 @@ export default function Home() {
             />
           </div>
 
-          <div className="md:w-1/2 space-y-6 z-10 order-1 md:order-2 mb-10 md:mb-0">
+          <div className="md:w-1/2 space-y-6 z-10 order-1 md:order-2 mb-10 md:mb-0 text-center md:text-left">
             <div className="space-y-2">
               <h1 className="text-6xl md:text-8xl neon-text tracking-tight">HELLO, I'M</h1>
-              <h2 className="text-5xl md:text-7xl script-text -mt-4">Avery</h2>
+              <h2 className="text-5xl md:text-7xl script-text text-[#6e89c8] -mt-4">Avery</h2>
             </div>
 
             <div className="max-w-md">
-              <p className="text-white">
+              <p className="text-[#6e89c8]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec
                 hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique
                 feugiat.
               </p>
             </div>
 
-            <div className="flex items-center space-x-2 text-white">
-              <span className="text-2xl script-text">Avery Davis</span>
+            <div className="md:hidden flex items-center space-x-2 text-[#6e89c8] justify-around ">
+              <span className="text-2xl script-text text-[#6e89c8]">Avery Davis</span>
               <span className="px-2">•</span>
-              <span>UGC CREATOR</span>
+              <span className="text-[#6e89c8]">UGC CREATOR</span>
+            </div>
+            <div className=" hidden md:flex items-center space-x-2 text-[#6e89c8] ">
+              <span className="text-2xl script-text text-[#6e89c8]">Avery Davis</span>
+              <span className="px-2">•</span>
+              <span className="text-[#6e89c8]">UGC CREATOR</span>
             </div>
           </div>
         </div>
       </section>
 
       <section id="portfolio" className="min-h-screen flex items-center relative overflow-hidden">
-        {/* <HolographicElement className="top-20 left-10" />
-        <HolographicElement className="bottom-20 right-10" /> */}
+      
 
         <div className="container mx-auto px-4 py-20">
           <div className="text-center mb-16 z-10 relative">
@@ -145,9 +151,10 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <p className="text-sm text-white">Client: Olivia Wilson</p>
-                <p className="text-sm text-white">Brief: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p className="text-sm text-primary">LINK TO VIDEO</p>
+                <p className="text-sm text-[#6e89c8]">Client: Olivia Wilson</p>
+                <p className="text-sm text-[#6e89c8]">Brief: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <Link href="https://www.instagram.com/morana.dev/" className="text-sm text-primary">LINK TO VIDEO</Link>
+
               </div>
             </div>
 
@@ -162,9 +169,9 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-                <p className="text-sm text-white">Client: Olivia Wilson</p>
-                <p className="text-sm text-white">Brief: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p className="text-sm text-primary">LINK TO VIDEO</p>
+              <p className="text-sm text-[#6e89c8]">Client: Olivia Wilson</p>
+              <p className="text-sm text-[#6e89c8]">Brief: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <Link href="https://www.instagram.com/morana.dev/" className="text-sm text-primary">LINK TO VIDEO</Link>
               </div>
             </div>
           </div>
@@ -185,7 +192,7 @@ export default function Home() {
 
 
       <footer className="py-6 bg-white/5 backdrop-blur-sm">
-        <div className="container mx-auto px-4 text-center text-white">
+        <div className="container mx-auto px-4 text-center text-[#6e89c8]">
           <p> Avery Davis • UGC Creator</p>
         </div>
       </footer>

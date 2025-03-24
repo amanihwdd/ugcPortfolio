@@ -25,13 +25,13 @@ export function Navigation() {
 
         <div className="hidden md:flex space-x-6 text-3xl">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className=" script-text text-primary hover:text-white transition-colors">
+            <Link key={link.href} href={link.href} className=" script-text text-primary hover:text-[#6e89c8] transition-colors">
               {link.label}
             </Link>
           ))}
         </div>
 
-        <button className="md:hidden text-white p-2 rounded-full bg-[#ff85c2] hover:bg-primary/30 transition-colors" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden text-[#6e89c8] p-2 rounded-full bg-[#ff85c2] hover:bg-primary/30 transition-colors" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>

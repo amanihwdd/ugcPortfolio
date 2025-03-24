@@ -26,15 +26,15 @@ export function ContactSection() {
         <div className="md:hidden space-y-12">
           <div className="text-center mb-8">
             <h1 className="text-6xl neon-text tracking-tight">LET'S WORK</h1>
-            <h2 className="text-4xl script-text -mt-2">together</h2>
+            <h2 className="text-4xl script-text -mt-2 text-[#6e89c8]">together</h2>
           </div>
 
           
 
           <div className="text-center space-y-2">
-            <p className="text-white text-lg">123-456-7890</p>
-            <p className="text-white text-lg">hello@reallygreatsite.com</p>
-            <p className="text-white text-lg">www.reallygreatsite.com</p>
+            <p className="text-[#6e89c8] text-lg">123-456-7890</p>
+            <p className="text-[#6e89c8] text-lg">hello@ugcname.com</p>
+            <p className="text-[#6e89c8] text-lg">www.ugcsite.com</p>
           </div>
           <div className="flex justify-center mb-8">
             <Image
@@ -46,7 +46,7 @@ export function ContactSection() {
             />
           </div>
           <div className="mt-40 text-center">
-              <p className="text-white text-sm">© 2025</p>
+              <p className="text-[#6e89c8] text-sm">© 2025</p>
             </div>
         </div>
 
@@ -67,17 +67,17 @@ export function ContactSection() {
           <div className="w-2/4 text-center z-20">
             <div className="mb-8">
               <h1 className="text-7xl md:text-9xl neon-text tracking-tight leading-none">LET'S WORK</h1>
-              <h2 className="text-5xl md:text-7xl script-text -mt-4">together</h2>
+              <h2 className="text-5xl md:text-7xl script-text -mt-4 text-[#6e89c8]">together</h2>
             </div>
 
             <div className="space-y-2 mt-16">
-              <p className="text-white text-xl">123-456-7890</p>
-              <p className="text-white text-xl">hello@reallygreatsite.com</p>
-              <p className="text-white text-xl">www.reallygreatsite.com</p>
+              <p className="text-[#6e89c8] text-xl">123-456-7890</p>
+              <p className="text-[#6e89c8] text-xl">hello@ugc.com</p>
+              <p className="text-[#6e89c8] text-xl">www.ugcport.com</p>
             </div>
 
             <div className="mt-40">
-              <p className="text-white text-sm">© 2025</p>
+              <p className="text-[#6e89c8] text-sm">© 2025</p>
             </div>
           </div>
 

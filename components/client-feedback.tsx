@@ -27,10 +27,10 @@ export function ClientFeedback() {
         span.style.position = "absolute"
         span.style.transform = `translate(${x}px, ${y}px) rotate(${angle + 90}deg)`
         span.style.transformOrigin = "0 0"
-        span.style.color = "white"
+        span.style.color = "#6e89c8 !important";
         span.style.fontSize = "0.875rem"
         span.style.fontWeight = "500"
-        span.style.textShadow = "0 0 5px rgba(255, 255, 255, 0.7)"
+        span.style.textShadow = "0 0 3px rgba(110, 137, 200, 0.8)"
 
         element.appendChild(span)
       })
@@ -70,7 +70,7 @@ export function ClientFeedback() {
         <div className="md:hidden space-y-12">
           <div className="text-center mb-8">
             <h1 className="text-6xl neon-text tracking-tight">CLIENT</h1>
-            <h2 className="text-4xl script-text -mt-2">feedback</h2>
+            <h2 className="text-4xl script-text -mt-2 text-[#6e89c8]">feedback</h2>
           </div>
 
           <div className="space-y-12">
@@ -86,10 +86,10 @@ export function ClientFeedback() {
                   />
                 </div>
                 <div className="absolute -top-6 left-0 right-0 h-12 flex justify-center">
-                  <p className="text-white text-sm font-medium">OLIVIA WILSON • RIMBERTO</p>
+                  <p className="text-[#6e89c8] text-sm font-medium">OLIVIA WILSON • RIMBERTO</p>
                 </div>
               </div>
-              <p className="text-white text-sm max-w-md mx-auto">
+              <p className="text-[#6e89c8] text-sm max-w-md mx-auto">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec
                 hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum.
               </p>
@@ -107,10 +107,10 @@ export function ClientFeedback() {
                   />
                 </div>
                 <div className="absolute -top-6 left-0 right-0 h-12 flex justify-center">
-                  <p className="text-white text-sm font-medium">HELENE PAQUET • BORCELLE</p>
+                  <p className="text-[#6e89c8] text-sm font-medium">HELENE PAQUET • BORCELLE</p>
                 </div>
               </div>
-              <p className="text-white text-sm max-w-md mx-auto">
+              <p className="text-[#6e89c8] text-sm max-w-md mx-auto">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec
                 hendrerit libero eget est tempor.
               </p>
@@ -124,8 +124,9 @@ export function ClientFeedback() {
           <div className="w-1/2 pr-8 ml-7">
             <div className="space-y-0">
               <h1 className="text-8xl md:text-9xl neon-text tracking-tight leading-none">CLIENT</h1>
-              <h2 className="text-6xl md:text-7xl script-text -mt-4">feedback</h2>
+              <h2 className="text-6xl md:text-7xl script-text -mt-4 text-[#6e89c8]">feedback</h2>
             </div>
+
           </div>
 
           {/* Vertical divider */}
@@ -136,7 +137,7 @@ export function ClientFeedback() {
             {/* First testimonial */}
             <div className="relative">
               {/* Curved client name */}
-              <div ref={oliviaTextRef} className="absolute top-10 left-0 w-full h-20"></div>
+              <div ref={heleneTextRef} className="text-[#6e89c8] absolute top-10 right-0 w-full h-20"></div>
 
               {/* Polaroid and testimonial */}
               <div className="flex items-start space-x-4">
@@ -148,9 +149,11 @@ export function ClientFeedback() {
                     height={200}
                     className="w-full h-auto"
                   />
+                  
                 </div>
                 <div className="w-2/3">
-                  <p className="text-white text-xs">
+                <p className="text-[#6e89c8] text-sm font-medium my-4">OLIVIA WILSON • RIMBERTO</p>
+                  <p className="text-[#6e89c8] text-xs">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec
                     hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum.
                   </p>
@@ -161,7 +164,7 @@ export function ClientFeedback() {
             {/* Second testimonial */}
             <div className="relative ml-auto">
               {/* Curved client name */}
-              <div ref={heleneTextRef} className="absolute top-10 right-0 w-full h-20"></div>
+              <div ref={heleneTextRef} className="text-[#6e89c8] absolute top-10 right-0 w-full h-20"></div>
 
               {/* Polaroid and testimonial */}
               <div className="flex items-start space-x-4">
@@ -175,7 +178,9 @@ export function ClientFeedback() {
                   />
                 </div>
                 <div className="w-2/3">
-                  <p className="text-white text-xs">
+                <p className="text-[#6e89c8] text-sm font-medium my-4">OLIVIA WILSON • RIMBERTO</p>
+
+                  <p className="text-[#6e89c8] text-xs">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec
                     hendrerit libero eget est tempor.
                   </p>
