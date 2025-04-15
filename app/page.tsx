@@ -153,7 +153,7 @@ export default function Home() {
               <div className="space-y-1">
                 <p className="text-sm text-[#6e89c8]">Client: Olivia Wilson</p>
                 <p className="text-sm text-[#6e89c8]">Brief: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <Link href="https://www.instagram.com/morana.dev/" className="text-sm text-primary">LINK TO VIDEO</Link>
+                <Link href="https://www.instagram.com/hathatiamani/" className="text-sm text-primary">LINK TO VIDEO</Link>
 
               </div>
             </div>
@@ -171,7 +171,7 @@ export default function Home() {
               <div className="space-y-1">
               <p className="text-sm text-[#6e89c8]">Client: Olivia Wilson</p>
               <p className="text-sm text-[#6e89c8]">Brief: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <Link href="https://www.instagram.com/morana.dev/" className="text-sm text-primary">LINK TO VIDEO</Link>
+                <Link href="https://www.instagram.com/hathatiamani/" className="text-sm text-primary">LINK TO VIDEO</Link>
               </div>
             </div>
           </div>
