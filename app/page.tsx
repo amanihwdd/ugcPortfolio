@@ -1,78 +1,146 @@
+"use client"
+
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
-import  {ClientFeedback} from "@/components/client-feedback"
+import { ClientFeedback } from "@/components/client-feedback"
 import { ServicesSection } from "@/components/services-section"
 import { ContactSection } from "@/components/contact-section"
-import Link from "next/link";
+import Link from "next/link"
+import { motion } from "framer-motion"
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, ease: "easeOut" }
+}
+
+const fadeInLeft = {
+  initial: { opacity: 0, x: -60 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.8, ease: "easeOut" }
+}
+
+const fadeInRight = {
+  initial: { opacity: 0, x: 60 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.8, ease: "easeOut" }
+}
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+}
 
 export default function Home() {
-  
   return (
     <main className="min-h-screen">
       <Navigation />
 
       <section className="h-screen flex items-center relative overflow-hidden">
-        {/* Background image */}
-        {/* <div className="absolute top-0 left-0 w-full h-full">
-          <Image src="/cloud-bg.jpg" alt="Cloud Background" fill className="object-cover" priority />
-        </div> */}
-        
-
-        {/* Holographic elements - positioned to not overlap content */}
-        <div className="absolute top-[-50%] right-[1%] md:top-[-125%] md:right-[5%] w-[500px] h-[1000px] md:w-[1000px] md:h-[2000px] pointer-events-none z-10">
+        {/* Holographic elements with parallax */}
+        <motion.div 
+          className="absolute top-[-50%] right-[1%] md:top-[-125%] md:right-[5%] w-[500px] h-[1000px] md:w-[1000px] md:h-[2000px] pointer-events-none z-10"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.5 }}
+        >
           <Image src="/holographicone.png" alt="Holographic decoration" fill className="object-contain animate-float" />
-        </div>
-        <div className="absolute bottom-[-6%] left-[-100%] md:left-[-10%] w-[1000px] h-[500px] pointer-events-none z-10">
-          <Image
-            src="/holographictt.png"
-            alt="Holographic decoration"
-            fill
-            className="object-contain animate-float"
-            style={{ animationDelay: "1s" }}
-          />
-        </div>
-        <div className="absolute top-[1%] left-[-50%] md:left-[-10%] w-[1000px] h-[500px] pointer-events-none z-10">
+        </motion.div>
+        
+        <motion.div 
+ className="absolute bottom-[-6%] left-[-100%] md:left-[-10%] w-[1000px] h-[500px] pointer-events-none z-10"          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
           <Image
             src="/holographict.png"
             alt="Holographic decoration"
             fill
             className="object-contain animate-float"
+            style={{ animationDelay: "1s" }}
+          />
+        </motion.div>
+        
+        {/* <motion.div 
+className="absolute top-[1%] left-[-50%] md:left-[-10%] w-[1000px] h-[500px] pointer-events-none z-10"          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
+          <Image
+            src="/holographictt.png"
+            alt="Holographic decoration"
+            fill
+            className="object-contain animate-float"
             style={{ animationDelay: "2s" }}
           />
-        </div>
+        </motion.div> */}
 
         <div className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center justify-around z-20">
-          <div className="md:w-1/2 space-y-6 ml-0 md:ml-7 mb-8 md:mb-0 text-center md:text-left">
-            <div className="space-y-4 mb-8">
+          <motion.div 
+            className="md:w-1/2 space-y-6 ml-0 md:ml-7 mb-8 md:mb-0 text-center md:text-left"
+            variants={staggerContainer}
+            initial="initial"
+            animate="animate"
+          >
+            <motion.div className="space-y-4 mb-8" variants={fadeInUp}>
               <p className="text-[#6e89c8] max-w-md">
                 I enjoy crafting content that ignites inspiration within my audience.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="space-y-2">
-              <h1 className="text-6xl sm:text-7xl md:text-9xl neon-text tracking-tight leading-none">UGC</h1>
-              <h1 className="text-6xl sm:text-7xl md:text-9xl neon-text tracking-tight leading-none">CREATOR</h1>
-              <h2 className="text-4xl sm:text-5xl md:text-7xl script-text text-[#6e89c8] -mt-4">portfolio</h2>
-            </div>
-          </div>
+            <motion.div className="space-y-2" variants={staggerContainer}>
+              <motion.h1 
+                className="text-6xl sm:text-7xl md:text-9xl neon-text tracking-tight leading-none"
+                variants={fadeInLeft}
+              >
+                UGC
+              </motion.h1>
+              <motion.h1 
+                className="text-6xl sm:text-7xl md:text-9xl neon-text tracking-tight leading-none"
+                variants={fadeInLeft}
+                transition={{ delay: 0.2 }}
+              >
+                CREATOR
+              </motion.h1>
+              <motion.h2 
+                className="text-4xl sm:text-5xl md:text-7xl script-text text-[#6e89c8] -mt-4"
+                variants={fadeInLeft}
+                transition={{ delay: 0.4 }}
+              >
+                portfolio
+              </motion.h2>
+            </motion.div>
+          </motion.div>
 
-          <div className="hidden md:block md:w-1/2 z-20">
+          <motion.div 
+            className="hidden md:block md:w-1/2 z-20"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
             <Image
-              src="homee.png"
+              src="/homee.png"
               alt="Avery Davis - UGC Creator"
               width={600}
               height={600}
               className="w-full h-auto"
               priority
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="about" className="min-h-screen flex items-center relative overflow-hidden">
-        
-        
-        {/* <div className="absolute bottom-[10px]  right-[-80px]  w-[1000px] h-[500px] pointer-events-none z-10">
+        <motion.div 
+          className="absolute z-11 bottom-[-5%] left-[-100%] md:bottom-[10px] md:left-[30%] w-[1000px] h-[500px] pointer-events-none"
+          initial={{ opacity: 0, rotate: -10 }}
+          whileInView={{ opacity: 1, rotate: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
           <Image
             src="/holographictt.png"
             alt="Holographic decoration"
@@ -80,70 +148,88 @@ export default function Home() {
             className="object-contain animate-float"
             style={{ animationDelay: "1s" }}
           />
-        </div> */}
-        <div className="absolute z-11 bottom-[-5%] left-[-100%] md:bottom-[10px]  md:left-[30%] w-[1000px] h-[500px] pointer-events-none ">
-          <Image
-            src="/holographictt.png"
-            alt="Holographic decoration"
-            fill
-            className="object-contain animate-float"
-            style={{ animationDelay: "1s" }}
-          />
-        </div>
-        
+        </motion.div>
 
         <div className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center justify-between">
-          <div className="md:w-1/2  order-2 md:order-1">
+          <motion.div 
+            className="md:w-1/2 order-2 md:order-1"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <Image
-              src="aboutw.png"
+              src="/aboutw.png"
               alt="Hello, I'm Avery"
               width={600}
               height={600}
               className="w-full h-auto"
             />
-          </div>
+          </motion.div>
 
-          <div className="md:w-1/2 space-y-6 z-10 order-1 md:order-2 mb-10 md:mb-0 text-center md:text-left">
-            <div className="space-y-2">
+          <motion.div 
+            className="md:w-1/2 space-y-6 z-10 order-1 md:order-2 mb-10 md:mb-0 text-center md:text-left"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div className="space-y-2" variants={fadeInRight}>
               <h1 className="text-6xl md:text-8xl neon-text tracking-tight">HELLO, I'M</h1>
               <h2 className="text-5xl md:text-7xl script-text text-[#6e89c8] -mt-4">Avery</h2>
-            </div>
+            </motion.div>
 
-            <div className="max-w-md">
+            <motion.div className="max-w-md" variants={fadeInRight}>
               <p className="text-[#6e89c8]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec
                 hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique
                 feugiat.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="md:hidden flex items-center space-x-2 text-[#6e89c8] justify-around ">
+            <motion.div 
+              className="md:hidden flex items-center space-x-2 text-[#6e89c8] justify-around"
+              variants={fadeInRight}
+            >
               <span className="text-2xl script-text text-[#6e89c8]">Avery Davis</span>
               <span className="px-2">•</span>
               <span className="text-[#6e89c8]">UGC CREATOR</span>
-            </div>
-            <div className=" hidden md:flex items-center space-x-2 text-[#6e89c8] ">
+            </motion.div>
+            <motion.div 
+              className="hidden md:flex items-center space-x-2 text-[#6e89c8]"
+              variants={fadeInRight}
+            >
               <span className="text-2xl script-text text-[#6e89c8]">Avery Davis</span>
               <span className="px-2">•</span>
               <span className="text-[#6e89c8]">UGC CREATOR</span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       <section id="portfolio" className="min-h-screen flex items-center relative overflow-hidden">
-      
-
         <div className="container mx-auto px-4 py-20">
-          <div className="text-center mb-16 z-10 relative">
+          <motion.div 
+            className="text-center mb-16 z-10 relative"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h1 className="text-6xl md:text-8xl neon-text tracking-tight">PORTFOLIO</h1>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 z-10 relative">
-            <div className="space-y-4">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-10 z-10 relative"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div className="space-y-4" variants={fadeInLeft}>
               <div className="polaroid">
                 <Image
-                  src="portfolio.png"
+                  src="/portfolio.png"
                   alt="Portfolio Item 1"
                   width={600}
                   height={600}
@@ -153,15 +239,14 @@ export default function Home() {
               <div className="space-y-1">
                 <p className="text-sm text-[#6e89c8]">Client: Olivia Wilson</p>
                 <p className="text-sm text-[#6e89c8]">Brief: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <Link href="https://www.instagram.com/hathatiamani/" className="text-sm text-primary">LINK TO VIDEO</Link>
-
+                <Link href="#" className="text-sm text-primary">LINK TO VIDEO</Link>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="space-y-4">
+            <motion.div className="space-y-4" variants={fadeInRight}>
               <div className="polaroid">
                 <Image
-                  src="portfolioone.png"
+                  src="/portfolioone.png"
                   alt="Portfolio Item 2"
                   width={600}
                   height={600}
@@ -169,34 +254,38 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-1">
-              <p className="text-sm text-[#6e89c8]">Client: Olivia Wilson</p>
-              <p className="text-sm text-[#6e89c8]">Brief: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <Link href="https://www.instagram.com/hathatiamani/" className="text-sm text-primary">LINK TO VIDEO</Link>
+                <p className="text-sm text-[#6e89c8]">Client: Olivia Wilson</p>
+                <p className="text-sm text-[#6e89c8]">Brief: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <Link href="#" className="text-sm text-primary">LINK TO VIDEO</Link>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
+
       <section id="clients">
-      <ClientFeedback />
-
+        <ClientFeedback />
       </section>
+
       <section id="services">
-      <ServicesSection />
-
+        <ServicesSection />
       </section>
+
       <section id="contact">
-      <ContactSection />
-
+        <ContactSection />
       </section>
 
-
-      <footer className="py-6 bg-white/5 backdrop-blur-sm">
+      <motion.footer 
+        className="py-6 bg-white/5 backdrop-blur-sm"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div className="container mx-auto px-4 text-center text-[#6e89c8]">
-          <p> Avery Davis • UGC Creator</p>
+          <p>Avery Davis • UGC Creator</p>
         </div>
-      </footer>
+      </motion.footer>
     </main>
   )
 }
-
